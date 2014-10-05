@@ -1,0 +1,54 @@
+@import basic
+html,body
+  margin: 0
+  padding: 0
+  width: 100%
+  height: 100%
+  background: #ddd
+
+#content
+  padding: 30px
+  width: 100%
+  height: 100%
+
+#canvas
+  border: 1px solid #000
+  background-size: cover
+  background-position: center center
+  background-repeat: no-repeat
+
+#canvas-html
+  width: 100%
+  display: none
+  background: #fff
+  background-size: contain
+  background-position: center center
+  background-image: url(lien.png)
+  background-repeat: no-repeat
+  border: 1px solid #ccc
+  position: relative
+  img
+    width: 100%
+    max-width: 640px
+    max-height: 90%
+
+#textbox
+  width: 63%
+  height: 35.9%
+  height: 100px
+  position: absolute
+  top: 100px
+  left: 50%
+  opacity: 0
+  @include transform(rotate(-4deg))
+  textarea
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+  font-size: 3em
+  table,tr,td
+    width: 100%
+    height: 100%
+    text-align: center

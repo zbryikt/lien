@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <title>template</title>
+    <!-- libraries-->
+    <script type="text/javascript" src="assets/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/d3js/3.3.11/d3.v3.min.js"></script>
+    <script type="text/javascript" src="assets/angular/1.2.3/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/3.0.2/css/bootstrap.min.css">
+    <script type="text/javascript" src="assets/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <!-- custom files-->
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script type="text/javascript" src="index.js"></script>
+  </head>
+  <body ng-app ng-controller="main">
+    <div id="content" class="row">
+      <div class="col-md-4">
+        <div id="edit-panel" class="panel panel-default">
+          <div class="panel-heading"><b>編輯</b></div>
+          <div class="panel-body">
+            <div class="form-group">
+              <textarea type="text" ng-model="text" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+              <input type="text" placeholder="背景圖" ng-model="bk" class="form-control">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <canvas id="canvas" ng-attr-style="background-image:url({{bk}})"></canvas>
+        <div id="canvas-html"><img src="blank.png">
+          <div id="textbox">
+            <table>
+              <tr>
+                <td><span>{{text}}</span></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
