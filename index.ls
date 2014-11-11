@@ -1,4 +1,4 @@
-test = ($scope) ->
+main = ($scope) ->
   $scope.backgrounds =[
     #{ name: \...上傳, link: \upload }
     { name: \清新, link: \hill.jpg }
