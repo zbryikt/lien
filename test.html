@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8">
+    <title>template</title>
+    <!-- libraries-->
+    <script type="text/javascript" src="assets/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/d3js/3.3.11/d3.v3.min.js"></script>
+    <script type="text/javascript" src="assets/angular/1.2.3/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap/3.0.2/css/bootstrap.min.css">
+    <script type="text/javascript" src="assets/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <!-- custom files-->
+    <link rel="stylesheet" type="text/css" href="test.css">
+    <script type="text/javascript" src="test.js"></script>
+  </head>
+  <body ng-app ng-controller="test">
+    <div id="content" class="row">
+      <div class="col-sm-8">
+        <div id="main">
+          <h3 class="text-center">勝文舉牌產生器</h3>
+          <div class="text-center"><small>選前二十天，讓我來幫大家舉舉牌吧！</small></div>
+          <div id="canvas-holder">
+            <div class="inner">
+              <canvas id="canvas"></canvas>
+              <canvas id="hide-canvas"></canvas>
+            </div>
+          </div>
+          <div class="form">
+            <div id="ctrlpanel" class="row">
+              <div class="col-sm-8">
+                <div ng-show="editBk" class="form-group">
+                  <div class="text-center">
+                    <label>背景</label>
+                  </div>
+                  <select ng-model="background" ng-options="bk.name for bk in backgrounds" class="form-control">
+                    <option>( 請選擇 )</option>
+                  </select>
+                  <input id="filebackground" type="file" ng-model="filebackground">
+                </div>
+                <div ng-show="!editBk" class="form-group">
+                  <div class="text-center">
+                    <label>標語</label>
+                  </div>
+                  <textarea rows="3" ng-model="comment" class="form-control"></textarea>
+                </div>
+              </div>
+              <div class="col-sm-4 text-center">
+                <div class="form-group">
+                  <label>功能</label><br>
+                  <div ng-show="editBk" ng-click="editBk=!!!editBk" class="btn btn-default">標語</div>
+                  <div ng-show="!editBk" ng-click="editBk=!!!editBk" class="btn btn-default">背景</div>
+                  <div ng-click="generate()" class="btn btn-default">分享</div>
+                  <div class="btn btn-default">下載</div>
+                  <div class="btn btn-default">隨機</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 text-center">
+        <h3 class="text-center">經典舉牌</h3>
+        <div class="subtitle text-center"><small>我也不清楚我說過什麼話...</small></div>
+        <div class="outcome"></div>
+        <div class="outcome"></div>
+        <div class="outcome"></div>
+        <div class="outcome"></div>
+        <div class="outcome"></div>
+        <div class="outcome"></div>
+        <div class="outcome"></div>
+        <div class="outcome"></div><br>
+        <div class="text-right"><a href="#more" class="btn btn-link">更多勝文...</a></div>
+      </div>
+    </div>
+  </body>
+</html>

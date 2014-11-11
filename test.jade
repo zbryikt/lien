@@ -1,0 +1,61 @@
+doctype html
+//- basic libraries: jquery(1.10.2), d3js(3.3.11), angularjs(1.2.3), bootstrap(3.0)/semantic-ui(0.9.3/0.9.5)
+- var usecdn = false
+- var useog = false
+- var lib = { jquery: true, d3js: true, angular: true, bootstrap: true, semantic: false }
+- var assets = "assets"
+- var thumbnail = "http://dummy.thumbnail"
+html(lang="en")
+  head(prefix="og: http://ogp.me/ns#")
+    meta(charset="utf-8")
+    title template
+    // libraries
+    include library.jade
+    // custom files
+    link(rel="stylesheet",type="text/css",href="test.css")
+    script(type="text/javascript",src="test.js")
+  body(ng-app,ng-controller="test")
+   #content.row
+     .col-sm-8
+       #main
+         h3.text-center 勝文舉牌產生器
+         .text-center: small 選前二十天，讓我來幫大家舉舉牌吧！
+         #canvas-holder
+           .inner
+             canvas#canvas
+             canvas#hide-canvas
+         .form
+           #ctrlpanel.row
+             .col-sm-8
+               .form-group(ng-show="editBk")
+                 .text-center: label 背景
+                 select.form-control(ng-model="background",ng-options="bk.name for bk in backgrounds")
+                   option ( 請選擇 )
+                 //-input.form-control(ng-show="background.link!='upload'",type="text",ng-model="urlbackground",placeholder="..或者輸入網址")
+                 input#filebackground(type="file",ng-model="filebackground")
+
+               .form-group(ng-show="!editBk")
+                 .text-center: label 標語
+                 textarea.form-control(rows="3",ng-model="comment")
+             .col-sm-4.text-center
+               .form-group
+                 label 功能
+                 br
+                 .btn.btn-default(ng-show="editBk",ng-click="editBk=!!!editBk") 標語
+                 .btn.btn-default(ng-show="!editBk",ng-click="editBk=!!!editBk") 背景
+                 .btn.btn-default(ng-click="generate()") 分享
+                 .btn.btn-default 下載
+                 .btn.btn-default 隨機
+      .col-sm-4.text-center
+        h3.text-center 經典舉牌
+        .subtitle.text-center: small 我也不清楚我說過什麼話...
+        .outcome
+        .outcome
+        .outcome
+        .outcome
+        .outcome
+        .outcome
+        .outcome
+        .outcome
+        br
+        .text-right: a.btn.btn-link(href="#more") 更多勝文...
