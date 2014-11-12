@@ -1,31 +1,6 @@
-template
-========
+lien
+===============
 
-a web template, for simple frontend. it contains a simple webserver, watch daemon, and a makefile for offline building. It uses jade, sass and livescript to build a web page.
+勝文舉牌產生器
 
-
-Usage
-========
-
-Simply edit index.jade, index.sass and index.ls, and type 'make' to build these into index.html, index.css and index.js.
-
-You can also watch all your changes and build them automatically. To do so, run
-
-    npm i
-
-once (for installing all dependencies), then run
-
-    npm start
-
-It will start watching all sass, jade and livescript changes, and also run a simple web server listening on localhost:9999.
-
-
-Configuration
-========
-
-by default, some javascript libraries are included. Config to use them or cdn by editing following code in index.jade:
-
-    - var usecdn = false
-    - var lib = { jquery: true, d3js: true, angular: true, bootstrap: false, semantic: true }
-    - var assets = "/assets"
-
+因為這則新聞，此專案暫不適合釋出，而選舉將至，已沒有其它適合時間點可以發表，所以專案中止: [選戰變質！連勝文蔡依珊遭網友合成av封面](http://n.yam.com/yam/politics/20141111/20141111676647.html?fb_action_ids=1556705284541950&fb_action_types=og.comments&fb_source=aggregation&fb_aggregation_id=288381481237582)
