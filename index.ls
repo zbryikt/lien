@@ -29,7 +29,7 @@ main = ($scope) ->
   ctx.textBaseline = "hanging"
 
   lienImg = new Image!
-  lienImg.src = "lien-margin.png"
+  lienImg.src = "lien-margin2.png"
 
   area = ( pc.w * pc.h * chdd.width * chdd.height )
   pw = chdd.width * pc.w
