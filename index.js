@@ -40,10 +40,10 @@ main = function($scope){
   ];
   $scope.background = $scope.backgrounds[0];
   pc = {
-    x: 0.134,
-    y: 0.57,
-    w: 0.58,
-    h: 0.32
+    x: 0.180,
+    y: 0.62,
+    w: 0.40,
+    h: 0.20
   };
   canvas = document.getElementById("canvas");
   ctx = canvas.getContext("2d");
@@ -61,7 +61,7 @@ main = function($scope){
   $('#hide-canvas').attr('height', chdd.height + "px");
   ctx.textBaseline = "hanging";
   lienImg = new Image();
-  lienImg.src = "lien-margin2.png";
+  lienImg.src = "ko2.jpg";
   area = pc.w * pc.h * chdd.width * chdd.height;
   pw = chdd.width * pc.w;
   ph = chdd.height * pc.h;
